@@ -1,3 +1,4 @@
+import time
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -24,7 +25,8 @@ st.title("Social Content Report")
 @st.cache_data
 def load_data():
     # Replace with your actual data-loading logic
-    return pd.read_csv("D:\\garbhit\\New folder\\video_data.csv")
+    df =  pd.read_csv("video_data.csv")
+    return df
 
 # Load the data
 df = load_data()

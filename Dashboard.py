@@ -83,7 +83,8 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-submitted = st.form_submit_button("Let's Start")
-if submitted:
-    st.switch_page("pages/01Social Content Report.py")
+with st.form("key1"):
+    submitted = st.form_submit_button("Let's Start")
+    if submitted:
+        st.switch_page("pages/01Request Analysis.py")
 

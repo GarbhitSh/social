@@ -13,7 +13,7 @@ from module import translate as tst
 
 st.title("Actual Context Report")
 
-df = pd.read_csv('D:\\garbhit\\New folder\\video_data.csv') 
+df = pd.read_csv('video_data.csv') 
 
 video_titles = df['Video Title']
 video_title_list=[]

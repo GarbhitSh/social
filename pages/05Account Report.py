@@ -4,7 +4,7 @@ import pandas as pd
 import altair as alt
 
 # Path to the CSV file
-csv_file_path = "D:\\garbhit\\New folder\\Accountreport.csv"
+csv_file_path = "Accountreport.csv"
 
 # Check if the file exists
 if not os.path.exists(csv_file_path):

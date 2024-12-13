@@ -16,7 +16,7 @@ from module import transcribe as ts
 
 st.title("Content Forensic")
 
-df = pd.read_csv('D:\\garbhit\\New folder\\video_data.csv') 
+df = pd.read_csv('video_data.csv') 
 
 video_titles = df['Video Title']
 video_Link = df['Video URL']

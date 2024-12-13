@@ -28,7 +28,7 @@ st.title("Automate")
 st.write("Processing")
 def load_data():
     # Replace with your actual data-loading logic
-    return pd.read_csv("D:\\garbhit\\New folder\\video_data.csv")
+    return pd.read_csv("video_data.csv")
 
 # Load the data
 df = load_data()

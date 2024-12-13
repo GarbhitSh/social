@@ -20,6 +20,7 @@ def get_coordinates(city_name):
     else:
         st.error("City not found!")
         return None, None
+    
 
 # Set up Streamlit page configuration
 st.set_page_config(page_title="Social-guard", layout="wide", initial_sidebar_state="expanded")
@@ -46,8 +47,8 @@ with st.form("video_fetch_form"):
     submitted = st.form_submit_button("Just Fetch Data")
     autox = st.form_submit_button("Complete Analysis")
 
-
-if submitted:
+def analyze():
+    global hashtag, city, radius, start_date, end_date, max_results, chart_type
     try:
         # Convert dates to datetime objects
         progress_bar = st.progress(0)
@@ -71,13 +72,24 @@ if submitted:
         progress_bar = st.progress(100)
 
         st.success(f"Data fetched and saved to {csv_filename}.")
-        if autox:
-            st.switch_page("pages/06Automate.py")
-      
+        return True
+    
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
+        return False
+
+
+
+if submitted:  
+    if analyze():  
         st.switch_page("pages/02Social Content Report.py")
+    
+
+if autox:
+    if analyze():
+        st.switch_page("pages/06Automate.py")
 
        # st.page("Social Content Report")
 
 
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
+
